@@ -30,10 +30,8 @@ jobs:
           echo "Build OK!"
 
       # ❌ PASSO 3: IMPLEMENTE AQUI — Secrets Scanning com Gitleaks
-      # Dica: use a action oficial "gitleaks/gitleaks-action@v2"
       - name: 🔑 Secrets Scanning
-        run: echo "TODO - implemente o Secrets Scanning com Gitleaks aqui"
-        # SUBSTITUA o run acima pela implementação correta com "uses:"
+        uses: gitleaks/gitleaks-action@v2
 
       # ❌ PASSO 4: IMPLEMENTE AQUI — SAST com Semgrep
       # Dica: instale com "pip install semgrep" e rode "semgrep scan --config auto --error src/"
