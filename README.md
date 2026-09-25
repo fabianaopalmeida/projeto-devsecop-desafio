@@ -34,11 +34,11 @@ Essa etapa é importante porque um segredo exposto no código pode permitir aces
 Nesta etapa foram identificados:
 
 Vazamento de Token de Acesso / Chave de API 
-const API_KEY = "ghp_xK92mNpL34rTvQ87wZaB56cDeFgHiJkL"
+
 Permite que invasores acessem repositórios privados, modifiquem código ou roubem propriedade intelectual, dependendo das permissões associadas ao token.
 
 Exposição de Senha de Banco de Dados
-const DB_PASSWORD = "admin@prod#2024"
+
 Dá acesso direto ao banco de dados da empresa, permitindo a exfiltração de dados sensíveis (LGPD/GDPR), adulteração de informações.
 
 
@@ -49,12 +49,11 @@ Ao executar o Semgrep é realizada uma análise estática do código-fonte para 
 
 Nesta etapa foram identificados:
 
-output.innerHTML = '<li>' + input.value + '</li>'
 Cross-Site Scripting - Risco de XSS
 Mapeamento: OWASP Top 10: A03:2021-Injection
 Risco de XSS (Cross-Site Scripting) causado pelo uso de innerHTML com um valor que vem diretamente do usuário. Isso permite o roubo de cookies de sessão, tokens de autenticação e ações maliciosas em nome do usuário afetado. 
 
-eval('console.log("Tarefa adicionada: ' + input.value + '")')
+
 Injeção de Código (Code Injection)
 Mapeamento: OWASP Top 10: A03:2021-Injection
 O uso de eval() faz o JavaScript interpretar uma string como código. Quando essa string envolve uma entrada que pode vir do usuário, existe risco de injeção de código.
@@ -71,9 +70,9 @@ Após essa etapa executamos novamente o Grype e encontramos vulnerabilidades nas
 As dependências foram atualizadas, o scan foi executado novamente e o gate de segurança passou.
 
 A execução identificou essas 3 dependências abaixo e outras dependências indiretas.
-lodash 4.17.4   atualizada para lodash: 4.18.1
-express 4.17.1	atualizada para express: 4.22.3
-axios 0.21.1	atualizada para axios: 1.20.0
+lodash: 4.18.1 versao atualizda
+express: 4.22.3 versao atualizda
+axios: 1.20.0 versao atualizda
 
 ### 4. Deploy — GitHub Pages
 
